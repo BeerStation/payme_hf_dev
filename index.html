@@ -400,10 +400,10 @@
           console.log('inside submit func');
           window.ReactNativeWebView.postMessage(JSON.stringify('inside submit function'));
           const sale = {
-            payerFirstName: 'asaff',
-            payerLastName: 'asff',
-            payerEmail: 'trahomoto@mailforspam.com',
-            payerPhone: '1231231',
+            payerFirstName: window.username,
+            payerLastName: window.userId,
+            payerEmail: 'mail@example.com',
+            payerPhone: '1231231231',
             payerZipCode: '123123123',
 
             
@@ -411,7 +411,7 @@
             total: {
               label: cardType,
               amount: {
-                currency: 'ILS',
+                currency: 'RON',
                 value: '0',
               },
             },
