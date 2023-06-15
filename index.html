@@ -393,6 +393,7 @@
         );
         cvc.on("validity-changed", function (event) {
           window.ReactNativeWebView.postMessage(JSON.stringify(event));
+          document.activeElement.blur();
         });
 
         window.addEventListener("keypress", (e) => {
