@@ -386,6 +386,12 @@
         cvc.on('validity-changed', function (event) {
           submitButton.focus()
         });
+        cvc.on('keypress', (e) => {
+          window.ReactNativeWebView.postMessage(JSON.stringify({type:'test',code:e.keyCode}));
+        if(e.target.value.length == 20 || e.keyCode == 69 || e.keyCode == 101) {
+          e.preventDefault();
+        }
+      })
     
 
 
