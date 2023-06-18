@@ -384,7 +384,9 @@
         });
 
         cvc.on('validity-changed', function (event) {
-          document.activeElement.blur()
+          if(event.isValid) {
+            document.activeElement.blur()
+          }
         });
     
 
