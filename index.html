@@ -158,7 +158,7 @@
           </div>
         </div>
             
-        <div style="opacity: 0; pointer-events: none;" class="phone_input-container" id="phone-group">
+        <div class="phone_input-container" id="phone-group">
           <label for="phone-container" class="control-label"
             >Phone Number (Optional)</label
           >
@@ -293,7 +293,7 @@
       const allFieldsReady = [];
 
       PayMe.create(window.apiKey, {
-        testMode: true,
+        testMode: false,
       }).then(instance => {
         const fields = instance.hostedFields();
 
@@ -384,9 +384,7 @@
         });
 
         cvc.on('validity-changed', function (event) {
-          if(event.isValid) {
-            document.activeElement.blur()
-          }
+          phoneInput.focus()
         });
     
 
